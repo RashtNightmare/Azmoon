@@ -15,4 +15,8 @@ class Lesson extends Model
     protected $fillable=[
         'name','major_id'
     ];
+    
+    public function major(){
+        $this->belongsTo(Major::class);
+    }
 }

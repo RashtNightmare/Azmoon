@@ -20,9 +20,9 @@ class CreateQuestionsTable extends Migration
             $table->string("option2");
             $table->string("option3");
             $table->string("option4");
-            $table->tinyInteger("true_answer");
-            $table->unsignedBigInteger('test_id');
-            $table->foreignId('test_id')->references('id')->on('tests')->onDelete('cascade');
+            // $table->tinyInteger("response");
+            // $table->unsignedBigInteger('test_id');
+            $table->foreignId('test_id');
             $table->timestamps();
         });
     }

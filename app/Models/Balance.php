@@ -17,4 +17,7 @@ class Balance extends Model
     protected $fillable = [
         'user_id','amount'
     ];
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
 }

@@ -15,20 +15,18 @@ class CreateTestsTable extends Migration
     {
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('student_id');
-            $table->foreignId('student_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->unsignedBigInteger('student_id');
+            // $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('teacher_id');
-            $table->foreignId('teacher_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('teacher_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('score'); //total
             $table->integer('acceptance_quorum');
             $table->integer('amount');
             $table->integer('title');
-            $table->unsignedBigInteger('major_id');
-            $table->foreignId('major_id')->references('id')->on('majors')->onDelete('cascade');
-            $table->unsignedBigInteger('lesson_id');
-            $table->foreignId('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
-            $table->timestamps('date');
-            $table->time('duration'); //per minuet
+            $table->foreignId('major_id');
+            $table->foreignId('lesson_id');
+            $table->string('date');
+            $table->string('duration'); //per minuet
             $table->integer('start_time');
             $table->timestamps();
         });

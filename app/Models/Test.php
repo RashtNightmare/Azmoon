@@ -26,5 +26,16 @@ class Test extends Model
     protected $fillable =[
         'student_id','teacher_id','score','acceptance_quorum','amount','title','major_id','lesson_id','date','duration','start_time'
     ];
-
+    public function students(){
+        return $this->hasMany(TestStudent::class);
+    }
+    public function questions(){
+        return $this->hasMany(Question::class);
+    }
+    public function payments(){
+        return $this->hasMany(Payment::class);
+    }
+    public function wallets(){
+        return $this->hasMany(Wallet::class);
+    }
 }

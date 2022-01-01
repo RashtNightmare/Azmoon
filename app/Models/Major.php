@@ -9,4 +9,11 @@ class Major extends Model
 {
     use HasFactory;
     protected $fillable=['name'];
+    
+    public function lessons(){
+        $this->hasMany(Lesson::class);
+    }
+    public function users(){
+        $this->hasMany(User::class);
+    }
 }
